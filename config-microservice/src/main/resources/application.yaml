@@ -7,5 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yarovi/appMicros/tree/main/configuration
+          uri: https://github.com/yarovi/appMicros.git
+          search-paths: configuration
         clone-on-start: true

@@ -1,3 +1,5 @@
+server:
+  port: 0
 spring:
   application:
     name: product-microservice
@@ -6,3 +8,10 @@ spring:
       mongodb:
       uri: mongodb://localhost:27017/productdb
       database: productdb
+eureka:
+  client:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      application-name: ${spring.application.name}
+    service-url:
+      defaultZone: http://localhost:8761/eureka/eureka

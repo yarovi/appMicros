@@ -1,0 +1,11 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-microservice
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yarovi/appMicros/tree/main/configuration
+        clone-on-start: true

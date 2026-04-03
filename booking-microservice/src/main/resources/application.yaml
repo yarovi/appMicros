@@ -1,0 +1,22 @@
+server:
+    port: 0
+spring:
+  application:
+    name: booking-microservice
+#Define connection to mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookingdb
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+    ddl-auto: update
+    show-sql: true
+eureka:
+  client:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      application-name: ${spring.application.name}
+    service-url:
+      defaultZone: http://localhost:8761/eureka/eureka

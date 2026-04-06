@@ -12,4 +12,4 @@ vault login root
 After run command is import you locate in vault container, then run the following command to load the json file to vault
 
 vault kv put secret/booking-microservice @data/booking-microservice.json
-vault kv put secret/booking-microservice @data/product-microservice.json
+vault kv put secret/product-microservice @data/product-microservice.json

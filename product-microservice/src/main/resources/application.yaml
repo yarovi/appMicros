@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: product-microservice
+  cloud:
+    config:
+      profile: dev
   # define connection to mongodb
 #  data:
 #    mongodb:
@@ -15,3 +18,9 @@ eureka:
       application-name: ${spring.application.name}
     service-url:
       defaultZone: http://localhost:8761/eureka/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

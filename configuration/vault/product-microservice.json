@@ -1,5 +1,4 @@
 {
-  "spring.data.mongodb.database": "mongodb",
-  "spring.data.mongodb.username": "admin",
-  "spring.data.mongodb.password": "123"
+  "spring.data.mongodb.database": "productdb",
+  "spring.data.mongodb.uri": "mongodb://localhost:27017"
 }

@@ -24,3 +24,9 @@ eureka:
       application-name: ${spring.application.name}
     service-url:
       defaultZone: http://localhost:8761/eureka/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

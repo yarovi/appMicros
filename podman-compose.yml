@@ -1,0 +1,50 @@
+#Define mongo db and volumenes for mongo data
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+#define mysql db and volumenes for mysql data
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: bookingdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  vault:
+    image: vault:1.13.3
+    container_name: some-vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "root" # si se necesita que se genere automaticamente eliminar esto
+      VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+    #entrypoint: ["/bin/sh", "-c", "/vault/init-vault.sh && vault server -dev"]
+    volumes:
+      - ./init-vault.sh:/vault/init-vault.sh
+      - vault_data:/vault/data  # Agregar volumen persistente
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: some-rabbit
+    hostname: my-rabbit
+    environment:
+      RABBITMQ_DEFAULT_USER: yas
+      RABBITMQ_DEFAULT_PASS: 2006702231
+    ports:
+      - "5672:5672"  # Puerto para las aplicaciones
+      - "15672:15672"  # Interfaz web de administración
+    restart: unless-stopped
+volumes:
+  mongo_data:
+  mysql_data:
+  vault_data:

@@ -4,10 +4,10 @@ spring:
   application:
     name: product-microservice
   # define connection to mongodb
-    data:
-      mongodb:
-      uri: mongodb://localhost:27017/productdb
-      database: productdb
+#  data:
+#    mongodb:
+#    uri: mongodb://localhost:27017/productdb
+#    database: productdb
 eureka:
   client:
     instance:

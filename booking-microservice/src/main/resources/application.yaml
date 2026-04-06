@@ -10,8 +10,8 @@ spring:
 #Define connection to mysql
   datasource:
     url: jdbc:mysql://localhost:3306/bookingdb
-    username: root
-    password: 123
+#    username: root
+#    password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

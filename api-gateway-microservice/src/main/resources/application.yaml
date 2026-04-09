@@ -3,8 +3,25 @@ server:
 spring:
   application:
     name: api-gateway-microservice
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9991/realms/inamsay-microservices-real
+        registration:
+          spring-cloud-gateway-client:
+            client-id: spring-cloud-gateway-client
+            client-secret: sUsavPXZDM3qtDnb47RhSVs8ZBFhARhM
+            provider: keycloak
+            authorization-grant-type: authorization_code
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            redirect-uri: http://localhost:8080/login/oauth2/code/spring-cloud-gateway-client
+            scope: openid
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay=
       server:
         webflux:
           routes:
@@ -12,8 +29,8 @@ spring:
               uri: lb://PRODUCT-MICROSERVICE
               predicates:
                 - Path=/api/v1/category/**, /api/v1/products/**
-    #          filters:
-    #            - TokenRelay=
+              filters:
+                - TokenRelay=
             - id: booking-service
               uri: lb://BOOKING-MICROSERVICE
               predicates:

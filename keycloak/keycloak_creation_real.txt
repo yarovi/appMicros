@@ -1,0 +1,12 @@
+inamsay-microservices-real
+
+Client
+spring-cloud-gateway-client
+
+Api Gateway
+
+Valid Redirect URIs
+http://localhost:8080/login/oauth2/code/spring-cloud-gateway-client
+
+Import
+the new user should rol "manage-realm"

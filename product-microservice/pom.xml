@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>org.yasmani.io</groupId>
-    <artifactId>microservices-app</artifactId>
+    <artifactId>product-microservice</artifactId>
     <name>product-microservice</name>
     <description>product-microservice</description>
 

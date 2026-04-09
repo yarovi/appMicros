@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/discovery-microservice/discovery-microservice.iml" filepath="$PROJECT_DIR$/discovery-microservice/discovery-microservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/product-microservice/product-microservice.iml" filepath="$PROJECT_DIR$/product-microservice/product-microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-app.iml" filepath="$PROJECT_DIR$/microservices-app.iml" />
     </modules>
   </component>
 </project>

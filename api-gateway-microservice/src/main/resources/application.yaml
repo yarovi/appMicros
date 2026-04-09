@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway-microservice
+  cloud:
+    gateway:
+      routes[0].id: product-service
+      routes[0].uri: lb://product-microservice
+      routes[0].predicates[0]: Path=/api/v1/category/**,/api/v1/products/**
+      routes[0].filters[0]: TokenRelay
+      routes[1].id: booking-service
+      routes[1].uri: lb://booking-microservice
+      routes[1].predicates[0]: Path=/api/v1/bookings/**
+      routes[1].filters[0]: TokenRelay
+eureka:
+  client:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      application-name: ${spring.application.name}
+    service-url:
+      defaultZone: http://localhost:8761/eureka/eureka

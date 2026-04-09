@@ -10,7 +10,6 @@
     </parent>
     <groupId>org.yasmani.io</groupId>
     <artifactId>booking-microservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>booking-microservice</name>
     <description>booking-microservice</description>
 

@@ -3,6 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="discovery-microservice" />
+        <module name="config-microservice" />
+        <module name="microservices-app (1) (org.yasmani.io)" />
+      </profile>
       <profile name="Annotation profile for microservices-app" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,13 +21,6 @@
         <module name="booking-microservice" />
         <module name="product-microservice" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="discovery-microservice" />
-        <module name="config-microservice" />
-      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -27,6 +28,7 @@
       <module name="booking-microservice" options="-parameters" />
       <module name="config-microservice" options="-parameters" />
       <module name="discovery-microservice" options="-parameters" />
+      <module name="microservices-app (1) (org.yasmani.io)" options="-parameters" />
       <module name="product-microservice" options="-parameters" />
     </option>
   </component>

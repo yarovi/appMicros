@@ -27,6 +27,7 @@
         <module>booking-microservice</module>
         <module>discovery-microservice</module>
         <module>config-microservice</module>
+        <module>api-gateway-microservice</module>
 
     </modules>
 

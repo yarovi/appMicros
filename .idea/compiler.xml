@@ -19,6 +19,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.44/lombok-1.18.44.jar" />
         </processorPath>
         <module name="booking-microservice" />
+        <module name="stock-microservice" />
         <module name="product-microservice" />
       </profile>
     </annotationProcessing>
@@ -30,6 +31,7 @@
       <module name="discovery-microservice" options="-parameters" />
       <module name="microservices-app (1) (org.yasmani.io)" options="-parameters" />
       <module name="product-microservice" options="-parameters" />
+      <module name="stock-microservice" options="-parameters" />
     </option>
   </component>
 </project>
